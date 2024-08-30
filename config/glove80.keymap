@@ -459,6 +459,14 @@ behaviors {
         bindings = <&kp LG(C)>, <&kp LG(V)>;
     };
 
+    term_cp: term_cp {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TERM_CP";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LC(LS(C))>, <&kp LC(LS(V))>;
+    };
+
 };
 };
 
@@ -470,23 +478,23 @@ behaviors {
 
         layer_Base {
             bindings = <
-&kp F1                &kp F2         &kp F3      &kp F4        &kp F5                                                                                                                                      &kp F6         &kp F7       &kp F8         &kp F9         &kp F10     
-&kp GRAVE             &kp N1         &kp N2      &kp N3        &kp N4       &kp N5                                                                                                                 &kp N6  &kp N7         &kp N8       &kp N9         &kp N0         &kp BSLH    
-&kp TAB               &kp Q          &kp W       &kp E         &kp R        &kp T                                                                                                                  &kp Y   &kp U          &kp I        &kp O          &kp P          &kp MINUS   
-&hm LCTRL ESC         &hm LGUI A     &hm LALT S  &hm LCTRL D   &hm LSHFT F  &kp G                                                                                                                  &kp H   &hm RSHFT J    &hm RCTRL K  &hm RALT L     &hm RGUI SEMI  &kp SQT     
-&kp LSHFT             &kp Z          &kp X       &kp C         &kp V        &kp B   &sk LSHFT               &kp LC(B)  &kp LC(W)  &sk LG(LS(LA(LCTRL)))  &sk LS(LA(LCTRL))  &sk LS(LCTRL)          &kp N   &kp M          &kp COMMA    &kp DOT        &kp FSLH       &kp RSHFT   
-&magic LAYER_Magic 0  &kp LS(GRAVE)  &kp GRAVE   &kp LS(BSLH)  &kp BSLH             &thumb LAYER_Nav SPACE  &cappy     &win_cp    &sk LA(LCTRL)          &kp RET            &thumb LAYER_Num BSPC          &kp LS(MINUS)  &kp EQUAL    &kp LS(EQUAL)  &none          &os_switch  
+&kp F1                &kp F2         &kp F3      &kp F4        &kp F5                                                                                                                                   &kp F6         &kp F7       &kp F8         &kp F9         &kp F10     
+&kp GRAVE             &kp N1         &kp N2      &kp N3        &kp N4       &kp N5                                                                                                              &kp N6  &kp N7         &kp N8       &kp N9         &kp N0         &kp BSLH    
+&kp TAB               &kp Q          &kp W       &kp E         &kp R        &kp T                                                                                                               &kp Y   &kp U          &kp I        &kp O          &kp P          &kp MINUS   
+&hm LCTRL ESC         &hm LGUI A     &hm LALT S  &hm LCTRL D   &hm LSHFT F  &kp G                                                                                                               &kp H   &hm RSHFT J    &hm RCTRL K  &hm RALT L     &hm RGUI SEMI  &kp SQT     
+&kp LSHFT             &kp Z          &kp X       &kp C         &kp V        &kp B   &sk LSHFT               &win_cp  &none     &sk LG(LS(LA(LCTRL)))  &sk LS(LA(LCTRL))  &kp LC(B)              &kp N   &kp M          &kp COMMA    &kp DOT        &kp FSLH       &kp RSHFT   
+&magic LAYER_Magic 0  &kp LS(GRAVE)  &kp GRAVE   &kp LS(BSLH)  &kp BSLH             &thumb LAYER_Nav SPACE  &cappy   &term_cp  &kp LC(W)              &kp RET            &thumb LAYER_Num BSPC          &kp LS(MINUS)  &kp EQUAL    &kp LS(EQUAL)  &none          &os_switch  
             >;
         };
 
         layer_Mac {
             bindings = <
-&kp F1                &kp F2         &kp F3      &kp F4        &kp F5                                                                                                                                         &kp F6         &kp F7       &kp F8         &kp F9         &kp F10     
-&kp GRAVE             &kp N1         &kp N2      &kp N3        &kp N4       &kp N5                                                                                                                    &kp N6  &kp N7         &kp N8       &kp N9         &kp N0         &kp BSLH    
-&kp TAB               &kp Q          &kp W       &kp E         &kp R        &kp T                                                                                                                     &kp Y   &kp U          &kp I        &kp O          &kp P          &kp MINUS   
-&hm LCTRL ESC         &hm LGUI A     &hm LALT S  &hm LCTRL D   &hm LSHFT F  &kp G                                                                                                                     &kp H   &hm RSHFT J    &hm RCTRL K  &hm RALT L     &hm RGUI SEMI  &kp SQT     
-&kp LSHFT             &kp Z          &kp X       &kp C         &kp V        &kp B   &sk LSHFT                  &kp LC(B)  &kp LC(W)  &sk LG(LS(LA(LCTRL)))  &sk LS(LA(LCTRL))  &sk LS(LCTRL)          &kp N   &kp M          &kp COMMA    &kp DOT        &kp FSLH       &kp RSHFT   
-&magic LAYER_Magic 0  &kp LS(GRAVE)  &kp GRAVE   &kp LS(BSLH)  &kp BSLH             &thumb LAYER_NavMac SPACE  &cappy     &mac_cp    &sk LA(LCTRL)          &kp RET            &thumb LAYER_Num BSPC          &kp LS(MINUS)  &kp EQUAL    &kp LS(EQUAL)  &none          &os_switch  
+&kp F1                &kp F2         &kp F3      &kp F4        &kp F5                                                                                                                                      &kp F6         &kp F7       &kp F8         &kp F9         &kp F10     
+&kp GRAVE             &kp N1         &kp N2      &kp N3        &kp N4       &kp N5                                                                                                                 &kp N6  &kp N7         &kp N8       &kp N9         &kp N0         &kp BSLH    
+&kp TAB               &kp Q          &kp W       &kp E         &kp R        &kp T                                                                                                                  &kp Y   &kp U          &kp I        &kp O          &kp P          &kp MINUS   
+&hm LCTRL ESC         &hm LGUI A     &hm LALT S  &hm LCTRL D   &hm LSHFT F  &kp G                                                                                                                  &kp H   &hm RSHFT J    &hm RCTRL K  &hm RALT L     &hm RGUI SEMI  &kp SQT     
+&kp LSHFT             &kp Z          &kp X       &kp C         &kp V        &kp B   &sk LSHFT                  &mac_cp  &none     &sk LG(LS(LA(LCTRL)))  &sk LS(LA(LCTRL))  &kp LC(B)              &kp N   &kp M          &kp COMMA    &kp DOT        &kp FSLH       &kp RSHFT   
+&magic LAYER_Magic 0  &kp LS(GRAVE)  &kp GRAVE   &kp LS(BSLH)  &kp BSLH             &thumb LAYER_NavMac SPACE  &cappy   &term_cp  &kp LC(W)              &kp RET            &thumb LAYER_Num BSPC          &kp LS(MINUS)  &kp EQUAL    &kp LS(EQUAL)  &none          &os_switch  
             >;
         };
 

@@ -1,0 +1,3 @@
+[submodule "lib/zmk"]
+	path = lib/zmk
+	url = git@github.com:moergo-sc/zmk.git

@@ -25,6 +25,7 @@
     quick-release; // Avoids "THis" problem (double capitalization)
     release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
+&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE LSHFT SQT CARET TILDE GRAVE>; };
 
 
 / {
@@ -116,12 +117,12 @@
 
         base {
             bindings = <
-&none           &none  &none  &none  &none                                                                      &none  &none      &none    &none     &none      
-&none           &none  &none  &none  &none  &none                                                        &none  &none  &none      &none    &none     &none      
-&kp TAB         &kp Q  &kp W  &kp E  &kp R  &kp T                                                        &kp Y  &kp U  &kp I      &kp O    &kp P     &kp MINUS  
-&kp ESC         &kp A  &kp S  &kp D  &kp F  &kp G                                                        &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT    
-&kp LGUI        &kp Z  &kp X  &kp C  &kp V  &kp B  &none    &none      &none  &none  &none      &none    &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp CAPS   
-&magic MAGIC 0  &none  &none  &none  &none         &lc NAV  &kp LSHFT  &none  &none  &kp SPACE  &lc SYM         &none  &none      &none    &none     &none      
+&none           &none      &none      &none     &none                                                                           &none      &none      &none     &none       &none      
+&none           &kp N1     &kp N2     &kp N3    &kp N4    &kp N5                                                        &kp N6  &kp N7     &kp N8     &kp N9    &kp N0      &none      
+&kp TAB         &kp Q      &kp W      &kp E     &kp R     &kp T                                                         &kp Y   &kp U      &kp I      &kp O     &kp P       &kp MINUS  
+&kp ESC         &kp A      &kp S      &kp D     &kp F     &kp G                                                         &kp H   &kp J      &kp K      &kp L     &kp SEMI    &kp SQT    
+&kp LGUI        &kp Z      &kp X      &kp C     &kp V     &kp B   &kp CAPS &none      &none  &none  &none      &none    &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH    &kp CAPS   
+&magic MAGIC 0  &kp TILDE  &kp GRAVE  &kp PIPE  &kp BSLH          &lc NAV  &kp LSHFT  &none  &none  &kp SPACE  &lc SYM          &kp UNDER  &kp EQUAL  &kp PLUS  &caps_word  &none      
             >;
         };
 
@@ -142,7 +143,7 @@
 &none  &none      &none      &none     &none       &none                                                    &none      &none      &none      &none      &none      &none      
 &none  &kp EXCL   &kp AT     &kp HASH  &kp DOLLAR  &kp PRCNT                                                &kp CARET  &kp AMPS   &kp STAR   &kp LC(B)  &kp LC(W)  &kp LC(X)  
 &none  &kp TILDE  &kp GRAVE  &kp PIPE  &kp BSLH    &kp EQUAL                                                &none      &sk RSHFT  &sk RCTRL  &sk RALT   &sk RGUI   &none      
-&none  &kp LBKT   &kp RBKT   &kp LBRC  &kp RBRC    &kp PLUS   &none   &none   &none  &none  &none   &none   &kp LPAR   &kp RPAR   &kp N2     &kp N6     &kp N0     &none      
+&none  &kp LBKT   &kp RBKT   &kp LBRC  &kp RBRC    &kp PLUS   &trans  &none   &none  &none  &none   &none   &none      &kp LPAR   &kp RPAR   &none      &none      &none      
 &none  &none      &none      &none     &none                  &trans  &trans  &none  &none  &trans  &trans             &none      &none      &none      &none      &none      
             >;
         };
@@ -152,7 +153,7 @@
 &none   &none            &none         &none         &none         &none                                                     &none     &none     &none     &none      &none     &none    
 &kp N2  &kp C_BRI_DN     &kp C_BRI_UP  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE                                                &kp N1    &kp N6    &kp N0    &kp N4     &kp DEL   &kp INS  
 &none   &sk LGUI         &sk LALT      &sk LCTRL     &sk LSHFT     &none                                                     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp BSPC  &none    
-&kp N4  &kp LC(LS(TAB))  &kp LC(TAB)   &kp C_PREV    &kp C_PP      &kp C_NEXT  &none   &none   &none  &none  &none   &none   &kp HOME  &kp PGDN  &kp PGUP  &kp END    &kp RET   &none    
+&kp N4  &kp LC(LS(TAB))  &kp LC(TAB)   &kp C_PREV    &kp C_PP      &kp C_NEXT  &trans  &none   &none  &none  &none   &none   &kp HOME  &kp PGDN  &kp PGUP  &kp END    &kp RET   &none    
 &none   &none            &none         &none         &none                     &trans  &trans  &none  &none  &trans  &trans            &none     &none     &none      &none     &none    
             >;
         };
@@ -162,7 +163,7 @@
 &none  &none     &none     &none      &none      &none                                                  &none    &none      &none      &none     &none     &none  
 &none  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                                 &kp N6   &kp N7     &kp N8     &kp N9    &kp N0    &none  
 &none  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &kp F11                                                &kp F12  &sk RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &none  
-&none  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5   &none   &none   &none  &none  &none   &none   &kp F6   &kp F7     &kp F8     &kp F9    &kp F10   &none  
+&none  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5   &trans  &none   &none  &none  &none   &none   &kp F6   &kp F7     &kp F8     &kp F9    &kp F10   &none  
 &none  &none     &none     &none      &none               &trans  &trans  &none  &none  &trans  &trans           &none      &none      &none     &none     &none  
             >;
         };
